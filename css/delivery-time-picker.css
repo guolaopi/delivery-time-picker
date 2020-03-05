@@ -1,0 +1,113 @@
+#deliveryTimePicker {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0000004f;
+    z-index: 20;
+    display: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-size: 16px;
+}
+#deliveryTimePicker .picker-box {
+    transition: all ease-out 0.2s;
+    background-color: #fff;
+    height: 35%;
+    width: 100%;
+    position: fixed;
+    border-radius: 10px 10px 0 0;
+    bottom: -35%;
+    left: 0;
+}
+#deliveryTimePicker .picker-box .picker-header {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+#deliveryTimePicker .picker-box .picker-header .close-btn {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+#deliveryTimePicker .picker-box .picker-header .close-btn::before,
+#deliveryTimePicker .picker-box .picker-header .close-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+}
+#deliveryTimePicker .picker-box .picker-header .close-btn::before {
+    border-top: 2px solid #444;
+    left: 8px;
+    top: 17px;
+}
+#deliveryTimePicker .picker-box .picker-header .close-btn::after {
+    border-left: 2px solid #444;
+    left: 17px;
+    top: 8px;
+}
+#deliveryTimePicker .picker-box .picker-content {
+    position: relative;
+    height: calc(100% - 50px);
+    font-size: 0;
+}
+#deliveryTimePicker .picker-box .picker-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    height: 100%;
+    font-size: 16px;
+}
+#deliveryTimePicker .picker-box .picker-content ul li {
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+#deliveryTimePicker #pickerDay,
+#deliveryTimePicker #pickerTime {
+    height: 100%;
+    vertical-align: top;
+    overflow-y: auto;
+}
+#deliveryTimePicker #pickerDay {
+    width: 35%;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+#deliveryTimePicker #pickerDay li.active {
+    background-color: #fff;
+}
+#deliveryTimePicker #pickerTime {
+    width: 65%;
+}
+#deliveryTimePicker #pickerTime li {
+    padding: 0 15px;
+    position: relative;
+}
+#deliveryTimePicker #pickerTime li.active {
+    color: red;
+}
+#deliveryTimePicker #pickerTime li.active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    transform: rotate(45deg);
+    border-bottom: 2px solid red;
+    border-right: 2px solid red;
+    right: 19px;
+    top: 13px;
+}
