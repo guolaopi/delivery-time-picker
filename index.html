@@ -31,6 +31,7 @@
     <body>
         <button type="button" onclick="show()">点击显示</button>
         <button type="button" onclick="destory()">点击销毁</button>
+        <div id="result"></div>
         <div id="root"></div>
     </body>
     <script type="text/javascript">
@@ -49,6 +50,10 @@
                         // 参数1是 “yyyy-MM-dd HH:mm”格式的字符串
                         // 参数2是js的一个Date()对象
                         console.log("选择了：", str, time);
+                        (document.getElementById("result").innerHTML =
+                            "选择了："),
+                            str,
+                            time;
                     }
                 },
                 "#root" // 要将控件添加到指定的dom下面，注意要加#号，此参数如果不写默认添加到body最后
