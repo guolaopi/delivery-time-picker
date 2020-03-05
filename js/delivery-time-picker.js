@@ -41,12 +41,12 @@ var DeliveryTimePicker = {
     init: function(option, rootEl) {
         DeliveryTimePicker.createDiv(rootEl);
         document.addEventListener("click", DeliveryTimePicker.clickToClose);
-        option = option ?? {};
-        option.dayRange = option.dayRange ?? 3;
-        option.timeInterval = option.timeInterval ?? 60;
-        option.showDate = option.showDate ?? false;
-        option.startTime = option.startTime ?? 0;
-        option.endTime = option.endTime ?? 23;
+        option = option ? option : {};
+        option.dayRange = option.dayRange ? option.dayRange : 3;
+        option.timeInterval = option.timeInterval ? option.timeInterval : 60;
+        option.showDate = option.showDate ? option.showDate : false;
+        option.startTime = option.startTime ? option.startTime : 0;
+        option.endTime = option.endTime ? option.endTime : 23;
         Date.prototype.addDays = function(number) {
             return new Date(this.getTime() + 24 * 60 * 60 * 1000 * number);
         };
