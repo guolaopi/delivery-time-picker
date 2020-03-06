@@ -4,6 +4,13 @@
 
 # [Demo 地址](https://guolaopi.github.io/delivery-time-picker/).
 
+# 引用（reference）：
+
+```html
+<script src="js/delivery-time-picker.js"></script>
+<link type="text/css" rel="stylesheet" href="css/delivery-time-picker.css" />
+```
+
 # 用法（Usage）：
 
 ```js
