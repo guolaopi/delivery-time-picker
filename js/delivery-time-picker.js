@@ -9,7 +9,7 @@ var DeliveryTimePicker = {
     createDiv: function(rootEl) {
         var closeDom = document.createElement("div");
         closeDom.className = "close-btn";
-        closeDom.click = DeliveryTimePicker.close;
+        closeDom.addEventListener("click", DeliveryTimePicker.close);
         var headerDom = document.createElement("div");
         headerDom.className = "picker-header";
         headerDom.textContent = "选择预计送达时间";
@@ -40,13 +40,17 @@ var DeliveryTimePicker = {
     },
     init: function(option, rootEl) {
         DeliveryTimePicker.createDiv(rootEl);
-        document.addEventListener("click", DeliveryTimePicker.clickToClose);
         option = option ? option : {};
         option.dayRange = option.dayRange ? option.dayRange : 3;
         option.timeInterval = option.timeInterval ? option.timeInterval : 60;
-        option.showDate = option.showDate ? option.showDate : false;
+        option.showWeekday = option.showWeekday;
+        option.showDate = option.showDate;
+        option.clickOutside = option.clickOutside;
         option.startTime = option.startTime ? option.startTime : 0;
         option.endTime = option.endTime ? option.endTime : 23;
+        if (option.clickOutside) {
+            document.addEventListener("click", DeliveryTimePicker.clickToClose);
+        }
         Date.prototype.addDays = function(number) {
             return new Date(this.getTime() + 24 * 60 * 60 * 1000 * number);
         };
@@ -57,7 +61,12 @@ var DeliveryTimePicker = {
         DeliveryTimePicker.updateTime();
     },
     destory: function() {
-        document.removeEventListener("click", DeliveryTimePicker.clickToClose);
+        if (DeliveryTimePicker.option.clickOutside) {
+            document.removeEventListener(
+                "click",
+                DeliveryTimePicker.clickToClose
+            );
+        }
         Date.prototype.addDays = null;
         Date.prototype.addMins = null;
         var pickerDom = document.getElementById("deliveryTimePicker");
