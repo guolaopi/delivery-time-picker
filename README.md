@@ -4,6 +4,10 @@
 
 # [Demo 地址](https://guolaopi.github.io/delivery-time-picker/).
 
+# 示意（gif）：
+
+![demo.gif](https://guolaopi.github.io/delivery-time-picker/img/demo.gif)
+
 # 引用（reference）：
 
 ```html
