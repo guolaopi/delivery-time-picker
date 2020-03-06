@@ -6,7 +6,7 @@
 
 # 示意（gif）：
 
-![demo.gif](https://guolaopi.github.io/delivery-time-picker/img/demo.gif)
+![demo.gif](img/demo.gif)
 
 # 引用（reference）：
 
