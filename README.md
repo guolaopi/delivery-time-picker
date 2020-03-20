@@ -8,7 +8,7 @@
 
 ![demo.gif](img/demo.gif)
 
-# 引用（reference）：
+# 引用（Reference）：
 
 ```html
 <script src="js/delivery-time-picker.js"></script>
